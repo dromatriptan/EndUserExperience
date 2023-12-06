@@ -1,4 +1,5 @@
 # EndUserExperience
+
 These are scripts that clean up the desktop UI for corporate users
 
 ## ConfigureSymphony.ps1
@@ -37,12 +38,12 @@ This particular script will install and enable the **Universal Write Filter** on
 
 **Overview** I have noticed in past employment that, at times, there isn't a convenient way to shadow a user's session and get to the bottom of the issue being raised. This script, when packaged and installed, can sit in the user's start menu and upon clicking the script will:
 
-  * create a file-based, and password protected, Remote Assistance invitation
-  * launch Outlook, if it has not already been launched.
-  * compose a new memo
-  * attach the RA invitation file to the memo
-  * Pre-fill the body of this new memo with the password
-  * Pre-fill the *To* header with the distribution list associated with the level-2 support team that usually handles issues.
+* create a file-based, and password protected, Remote Assistance invitation
+* launch Outlook, if it has not already been launched.
+* compose a new memo
+* attach the RA invitation file to the memo
+* Pre-fill the body of this new memo with the password
+* Pre-fill the *To* header with the distribution list associated with the level-2 support team that usually handles issues.
 
 **Note:** This script must be launched using PowerShell (x86) and also packaged exclusive as a 32-bit package due to the heavy use of COM Objects.
 
@@ -57,3 +58,7 @@ This particular script will install and enable the **Universal Write Filter** on
 ## StartVNCUserMode.ps1
 
 **Overview** While everyone knows how to install and configure VNC in SYSTEM mode, I couldn't find anyone that understood the need for user mode. User mode is vital for those users that are connecting into their desktops through RDP and get assigned a session ID other than 0 (i.e., console mode). Having this script packaged and added (as a shortcut) to users' Start Menu startup folder will run VNC Server under that user's logon token on a port beginning on 5500, permitting multiple instances of VNC Viewer on, say, a Remote Desktop Session Host (i.e., RDSH) server.
+
+## Win11-TaskBarSettings.ps1
+
+**Overview** This is an attempt to begin compiling the user customizations typically required in a Windows 11 enterprise environment. Most organizations will *not* be leveraging the on-frills Team chat application; Most enterprise organizations will also be *upgrading* from Windows 10 where the Start Menu is left-aligned. The center-aligned Start is an attempt to mimic and woo mobile operating system users as well as the macOS audience on the consumer end of the spectrum. Then there is also the checkered past we have all experienced with Microsoft's widgets - they were huge vulnerability and exploit vectors that enterprises simply disabled to mitigate.
